@@ -1,2 +1,4 @@
-bool extract_command(int& flag_argc, char** flag_argv);
-
+class Command{
+    public:
+        Command(int& flag_argc, char** flag_argv);
+};

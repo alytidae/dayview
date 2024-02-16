@@ -3,7 +3,13 @@
 #include "command.hpp"
 
 int main(int argc, char **argv) {
-    if (!extract_command(argc, argv)) {
-        std::cout << "Error: unknown command. Use `day help` to see available commands\n";
+    try 
+    {
+        Command command(argc, argv);
+    }
+    catch (std::invalid_argument& e)
+    {
+        std::cout << e.what();
+        return -1;
     }
 }
